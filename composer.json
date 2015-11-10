@@ -1,0 +1,27 @@
+{
+  "name": "smt/open-popo",
+  "description": "Simple library for easy testing Plain Old PHP Objects (inspired by open-pojo)",
+  "homepage": "https://github.com/saksmt/open-popo",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kirill Saksin",
+      "email": "kirillsaksin@yandex.ru"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "~5"
+  },
+  "keywords": [
+    "plain old php object",
+    "object",
+    "entity",
+    "test",
+    "phpunit"
+  ],
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
