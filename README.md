@@ -68,3 +68,8 @@ Every rule and tester:
  - can be instantiated directly (via `new`) or via factory method (`::create()`)
 
 Validator can be instantiated directly (via `new`) or via factory method (`::create()`)
+
+License
+=======
+
+This package is licensed under [MIT license](https://github.com/saksmt/open-popo/blob/develop/LICENSE)
