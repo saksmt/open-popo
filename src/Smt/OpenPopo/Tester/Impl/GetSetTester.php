@@ -12,6 +12,7 @@ use Smt\OpenPopo\Tester\Tester;
  * @package Smt\OpenPopo\Tester\Impl
  * @author Kirill Saksin <kirillsaksin@yandex.ru>
  * @api
+ * @deprecated
  */
 class GetSetTester implements Tester
 {

@@ -10,8 +10,9 @@ use Smt\OpenPopo\Generator\TestDataGenerator;
  * @package Smt\OpenPopo\Tester\Impl
  * @author Kirill Saksin <kirillsaksin@yandex.ru>
  * @api
+ * @deprecated
  */
-class FluentGetSetTester extends GetSetTester
+class FluentPropertyTester extends GetSetTester
 {
     /** {@inheritdoc} */
     protected function validate($object, $defaultValue, \ReflectionMethod $getterMethod, \ReflectionMethod $setterMethod)
