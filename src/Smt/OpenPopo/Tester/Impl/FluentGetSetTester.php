@@ -10,6 +10,7 @@ use Smt\OpenPopo\Generator\TestDataGenerator;
  * @package Smt\OpenPopo\Tester\Impl
  * @author Kirill Saksin <kirillsaksin@yandex.ru>
  * @api
+ * @deprecated
  */
 class FluentGetSetTester extends GetSetTester
 {
@@ -22,7 +23,10 @@ class FluentGetSetTester extends GetSetTester
             get_class($object),
             $getterMethod->getName()
         ));
-        Assert::assertEquals($object, $setterMethod->invoke($object, $testData), sprintf('%s::%s() is not fluent', get_class($object), $setterMethod->getName()));
+        Assert::assertEquals($object, $setterMethod->invoke($object, $testData), sprintf(
+            '%s::%s() is not fluent', get_class($object),
+            $setterMethod->getName()
+        ));
         Assert::assertEquals($testData, $getterMethod->invoke($object), sprintf(
             'Failed on %s::%s() - can`t get written value',
             get_class($object),

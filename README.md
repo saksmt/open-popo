@@ -23,7 +23,8 @@ Example
     use Smt\OpenPopo\Validator\Validator;
     use Smt\OpenPopo\Rule\Impl\GetterMustExist;
     use Smt\OpenPopo\Rule\Impl\SetterMustExist;
-    use Smt\OpenPopo\Tester\Impl\FluentGetSetTester; // You can also remove "Fluent" prefix if you don't want to check
+    use Smt\OpenPopo\Tester\Impl\GetterTester;
+    use Smt\OpenPopo\Tester\Impl\FluentSetterTester; // You can also remove "Fluent" prefix if you don't want to check
                                                      // this functional
 
     class EntityTest extends PHPUnit_Framework_TestCase
@@ -37,7 +38,9 @@ Example
                     SetterMustExist::create()
                         ->skip('iWantThisPropertyToHaveNoSetter')
                 )
-                ->addTester(FluentGetSetTester::create())
+
+                ->addTester(GetterTester::create())
+                ->addTester(FluentSetterTester::create())
 
                 ->validate(PopoClass::fromClassName(Entity::class)
             ;
@@ -55,8 +58,11 @@ Available rules:
 
 Available testers:
 
- - `GetSetTester`
- - `FluentGetSetTester`
+ - `GetSetTester` **deprecated**
+ - `FluentGetSetTester`**deprecated**
+ - `GetterTester`
+ - `SetterTester`
+ - `FluentSetterTester`
 
 Planned:
 
