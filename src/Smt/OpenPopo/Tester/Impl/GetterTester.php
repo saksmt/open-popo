@@ -17,11 +17,21 @@ class GetterTester extends AbstractPropertyTester
     /** {@inheritdoc} */
     protected function validate($object, \ReflectionProperty $property, PopoClass $class)
     {
-        if (!$class->hasGetter($property)) {
+        $propertyName = $property->getName();
+        if (!$class->hasGetter($propertyName)) {
             return;
         }
-        Assert::assertEquals($property->getValue($object), $class->getGetter($property)->invoke($object));
+        $getter = $class->getGetter($propertyName);
+        Assert::assertEquals($property->getValue($object), $getter->invoke($object), sprintf(
+            'Failed on %s::%s()',
+            get_class($object),
+            $getter->getName()
+        ));
         $property->setValue($object, TestDataGenerator::forPrimitive());
-        Assert::assertEquals($property->getValue($object), $class->getGetter($property)->invoke($object));
+        Assert::assertEquals($property->getValue($object), $getter->invoke($object), sprintf(
+            'Failed on %s::%s()',
+            get_class($object),
+            $getter->getName()
+        ));
     }
 }
